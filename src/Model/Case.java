@@ -4,6 +4,8 @@ import Asset.Tools;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.tools.Tool;
+
 public class Case {
     private Piece pieceSurLaCase;
     private int x;
@@ -20,6 +22,8 @@ public class Case {
         } else {
             skinCase = new ImageView(Tools.CASENOIRE);
         }
+        skinCase.setX(x*Tools.TAILLEIMAGECASE + Tools.TAILLEIMAGECASE/2.);
+        skinCase.setY(y*Tools.TAILLEIMAGECASE + Tools.TAILLEIMAGECASE/2.);
     }
 
     public Piece getPieceSurLaCase() {
@@ -53,4 +57,6 @@ public class Case {
     public void setEstBlanc(boolean estBlanc) {
         this.estBlanc = estBlanc;
     }
+
+    public ImageView getSkinCase() { return skinCase; }
 }

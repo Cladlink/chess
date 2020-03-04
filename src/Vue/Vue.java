@@ -27,9 +27,9 @@ public class Vue extends Application {
 
         this.primaryStage = primaryStage;
 
-        Group root = new Group();
+        this.root = new Group();
+        afficherPlatau();
         Scene scene = new Scene(root);
-        this.root = root;
 
         setEventHandlerMenu();
         primaryStage.setTitle("Echec");
@@ -47,6 +47,10 @@ public class Vue extends Application {
 
     public void afficherPlatau() {
         root.getChildren().clear();
-        //root.getChildren().add();
+        for (int i = 0; i < partie.getPlateau().length; i++) {
+            for (int j = 0; j < partie.getPlateau()[i].length; j++) {
+                root.getChildren().add(partie.getCase(i,j).getSkinCase());
+            }
+        }
     }
 }
