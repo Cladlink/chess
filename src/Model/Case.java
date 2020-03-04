@@ -17,13 +17,16 @@ public class Case {
         this.pieceSurLaCase = pieceSurLaCase;
         this.x = x;
         this.y = y;
-        if (x % 2 == 0 && y % 2 == 0) {
+        if (x % 2 == 0 && y % 2 == 0 || (x % 2 == 1 && y % 2 == 1)) {
             skinCase = new ImageView(Tools.CASEBLANCHE);
         } else {
             skinCase = new ImageView(Tools.CASENOIRE);
         }
-        skinCase.setX(x*Tools.TAILLEIMAGECASE + Tools.TAILLEIMAGECASE/2.);
-        skinCase.setY(y*Tools.TAILLEIMAGECASE + Tools.TAILLEIMAGECASE/2.);
+        double scale = 0.15;
+        skinCase.setScaleX(scale);
+        skinCase.setScaleY(scale);
+        skinCase.setX(x*Tools.TAILLEIMAGECASE*scale + 150);
+        skinCase.setY(y*Tools.TAILLEIMAGECASE*scale - 150);
     }
 
     public Piece getPieceSurLaCase() {
