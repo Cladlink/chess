@@ -19,4 +19,5 @@ public class Partie {
     public Case[][] getPlateau() {
         return plateau;
     }
+
 }
